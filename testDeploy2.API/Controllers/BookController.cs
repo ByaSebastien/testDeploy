@@ -58,18 +58,18 @@ namespace testDeploy2.API.Controllers
             }
         }
 
-        //[HttpDelete("{isbn}")]
-        //public IActionResult Delete([FromRoute] string isbn)
-        //{
-        //    try
-        //    {
-        //        _bookService.Delete(isbn);
-        //        return NoContent();
-        //    }
-        //    catch (KeyNotFoundException ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
+        [HttpDelete("{isbn}")]
+        public IActionResult Delete([FromRoute] string isbn)
+        {
+            try
+            {
+                _bookService.Delete(isbn);
+                return NoContent();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
